@@ -88,24 +88,27 @@ done
 7) Fibonacci series
 ```
 #!/bin/bash
+echo "enter number of terms u want to print"
+read n
 
-echo "Enter the number of terms for Fibonacci series: "
-read num_terms
-
-# Initialize the first two terms of the series
 a=0
 b=1
 
-echo "Fibonacci series up to $num_terms terms:"
-echo -n "$a "
-
-for ((i = 1; i < num_terms; i++)); do
-  echo -n "$b "
-  next=$((a + b))
-  a=$b
-  b=$next
+if [ $n == 0 ]
+then
+echo "0"
+elif [ $n == 1 ]
+then
+echo "1"
+else
+echo "0"
+echo "1"
+for ((i=2; i <= n; i++));do
+next=$((a + b))
+a=$b
+b=$next
+echo "$next"
 done
-
-echo ""
+fi
 
 ```
